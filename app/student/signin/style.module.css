@@ -1,0 +1,16 @@
+.leftpart{
+    position: absolute;
+    overflow: hidden;
+    right: 5vw;
+     
+    width: 45%;
+    height: 70%;
+  }
+  .dekstopmain{
+    top: 10%;
+    width: 100%;
+    height: 90%;
+    /* background-color: rgba(185, 235, 240, 0.441); */
+    position: absolute;
+}
+

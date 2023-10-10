@@ -1,0 +1,33 @@
+
+
+.profilemain{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 10%;
+    
+  }
+  .container{
+    margin-top: 30px;
+    width: 50%;
+    padding: 30px;
+    height: 93%;
+    margin-left: 25%;
+    background-color: #eafcf6d3;
+    overflow-y: scroll;
+    /* background-color: rgba(235, 248, 244, 0.959); */
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  
+  .container::-webkit-scrollbar { 
+    width: 12px; 
+  } 
+  
+  .eduadd{
+    font-size: 20px;
+    margin-left: 33%;
+    font-weight: 500;
+    font-family: sans-serif;
+  
+  }
+  

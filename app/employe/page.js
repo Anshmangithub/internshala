@@ -1,26 +1,29 @@
 "use client"
-import React from 'react'
-import './globals.css'
-import Image from 'next/image'
-import internshalalogo from "../public/images/image-removebg.png"
-import mainimg from "../public/images/main.png"
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import style from "./style.module.css"
+import mainimg from "@/public/images/main.png"
+import Image from 'next/image'
 const page = () => {
- 
-  const router = useRouter()
-  const studentroute = ()=>{
-    router.push("/student")
-  }
 
-  const employeroute = ()=>{
-    router.push("/employe")
-  }
+    
+    const router = useRouter()
+    const {isAuthenticated} = useSelector((state) => state.employeReducers) 
+  
+   useEffect(()=>{
+    
+    if(isAuthenticated) router.push("/employe/auth")
+    
+  
+   },[isAuthenticated])
+  
+
   return (
-    <div className='main'>
-    <nav className='navbar'>
+    <div className={style.mainpage}>
+    {/* <nav className='navbar'>
       
       <Image
        className='imageinternlogo'
@@ -34,17 +37,17 @@ const page = () => {
       </div>
 
       <div className='navbartype2'>
-        <button className='loginbutton btn btn-primary' onClick={studentroute}>Student</button>
-        <button className='signupbutton btn btn-primary' onClick={employeroute}>Employe</button>
+        <button className='loginbutton btn btn-primary'>Login</button>
+        <button className='signupbutton btn btn-primary'>Signup</button>
       </div>
-    </nav>
+    </nav> */}
       <div className='sloganbig'>
         <h1 className='sloganh1'>Make your dream career a reality</h1>
       </div>
     <div className='leftpart'>
      
       <Image
-      className='animationimg'
+      className={style.animationimg}
       src={mainimg}
       />
     </div>
@@ -53,8 +56,8 @@ const page = () => {
       <h1 className='internshalah1'>Internshala</h1>
       <h5 className='parah5'>Get hierd from the top companies & showcase your creativeness</h5>
     <div className='stuemp'>
-      <Link href="/student"><h4 className='linkmain'>Student</h4> </Link>
-     <Link href="/employe"> <h4 className='linkmain'>Employe</h4> </Link>
+      <Link href="/employe/signin"><h4 className='linkmain'>Signin</h4> </Link>
+     <Link href="/employe/signup"> <h4 className='linkmain'>Signup</h4> </Link>
      </div>
     </div>
   </div>

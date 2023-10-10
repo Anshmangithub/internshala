@@ -1,0 +1,55 @@
+
+.profilemain{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 10%;
+    
+  }
+  .container{
+    margin-top: 30px;
+    overflow-y: scroll;
+    width: 50%;
+    padding: 30px;
+    height: 93%;
+    margin-left: 25%;
+    background-color: #d4f0e6be;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+  
+  .profile{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(211, 255, 236);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;  
+  }
+  
+  .profilename{
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(59, 59, 59);
+    opacity: .7;
+   
+  }
+  
+  .profilename1{
+    font-size: 28px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    opacity: .7;
+   
+  }
+  .profileimage{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  
+  }
+  .container::-webkit-scrollbar { 
+    width: 12px; 
+  } 

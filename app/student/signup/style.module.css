@@ -1,0 +1,97 @@
+.navbar{
+    position: absolute;
+    width: 100%;
+    height: 10%;
+ 
+}
+
+.dekstopmain{
+    top: 10%;
+    width: 100%;
+    height: 90%;
+    /* background-color: rgba(185, 235, 240, 0.441); */
+    position: absolute;
+}
+
+
+
+  .animationimg{
+  
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+  }
+  .leftpart{
+    position: absolute;
+    overflow: hidden;
+    right: 5vw;
+    bottom: 4vw;
+    width: 45%;
+    height: 70%;
+  }
+  
+  .sloganbig{
+    margin-top: 1vw;
+    width: 50vw;
+    height: 7vw;
+    margin-left: 22vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sloganh1{
+  
+    font-size: 50px;
+    font-weight: 100;
+    opacity: .8;
+    color: rgba(6, 17, 17, 0.963);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .rightpart1{
+    margin-left: 5vw;
+    margin-top: 3vw;
+    width: 45vw;
+    height: 30vw;
+    
+  }
+  
+
+  /* --------------------------------------------------login css -------------------------- */
+  
+  
+  .rightpart2{
+  position: absolute;
+  margin-left: 8vw;
+  margin-top: 2vw;
+
+  width: 30vw;
+  height: 40vw;
+  border-radius: 10px;
+  /* border: 2px solid rgba(77, 108, 108, 0.922); */
+  background-color:  rgba(110, 220, 220, 0.441);
+  opacity: .9;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+  
+  
+  }
+  
+  .loginintenimg{
+  position: absolute;
+  margin-left: 4.5vw;
+  margin-top: -65px;
+  object-fit: cover;
+  width: 250px;
+  height: 150px;
+  }
+
+  
+  .Signuph3{
+    margin-top: 10px;
+  font-size: 25px;
+  margin-left: 12vw;
+  font-weight: 600;
+  color: rgba(22, 23, 24, 0.854);
+  opacity: .9;
+  }

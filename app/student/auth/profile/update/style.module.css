@@ -1,0 +1,91 @@
+.main{
+    width: 100%;
+    height: 100%;
+  }
+  .navbar{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    display: flex;
+    border-bottom: 2px light rgb(88, 88, 94);
+    box-shadow: rgba(109, 108, 108, 0.571) 0px 25px 20px -20px;
+  }
+  
+  .imageinternlogo{
+    width: 14vw;
+    height: 6vw;
+    object-fit: cover;
+    margin-left: 2vw;
+    margin-top: -5px;
+    
+  }
+  
+  .navbartype{
+    display: flex;
+    align-items: center;
+    margin-left: 40vw;
+   justify-content: space-around;
+    width: 30%;
+    height: 100%;
+    
+    
+  }
+  
+  .h3tag{
+    font-size: 18px;
+    font-weight: 200;
+    opacity: .8;
+    color: rgba(109, 109, 142, 0.977);
+    font-family: Tahoma;
+    
+  }
+  
+  .profilemain{
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 10%;
+    
+  }
+  .container{
+    margin-top: 30px;
+    width: 50%;
+    padding: 30px;
+    height: 93%;
+    margin-left: 25%;
+    background-color: #b7f0dcd3;
+  }
+  
+  .profile{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgb(211, 255, 236);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;  
+  }
+  
+  .profilename{
+    font-size: 30px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(59, 59, 59);
+    opacity: .7;
+   
+  }
+  
+  .profilename1{
+    font-size: 28px;
+    font-weight: 400;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(0, 0, 0);
+    opacity: .7;
+   
+  }
+  .profileimage{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  
+  }
