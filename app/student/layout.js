@@ -6,8 +6,9 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Image from 'next/image'
-import internshalalogo from "@/public/images/image-removebg.png"
+import talentforge from "../../public/talent-forge.png"
 import style from "./style.module.css"
+import { toast } from 'react-toastify';
 
 
 
@@ -27,15 +28,18 @@ const Studentlayout = ({ children}) => {
 
     const signoutHandler = ()=>{
         dispatch(asyncsignoutstudent())
+        toast("Successfully Logout")
     } 
   return (
     <>
          <div className={style.main}>
           <div className={style.navbar}>
+            <Link href="/">
            <Image
            className={style.imageinternlogo}
-           src={internshalalogo}
+           src={talentforge}
           />
+          </Link>
     
           <div className={style.navbartype}>
             <h3 className={style.h3tag}><Link style={{textDecoration : "none" , color : "GrayText"}} href={isAuthenticated ? "/student/auth" : "/student"}>Home</Link></h3>

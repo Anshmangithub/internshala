@@ -41,8 +41,12 @@ const page = () => {
       email ,
       password 
      }
-
+   try {
      dispatch(asyncsignupstudent(newStudent))
+     toast("Successfully Signup")
+   } catch (error) {
+    toast.error(error)
+   }
   }
   
   return (
@@ -68,72 +72,72 @@ const page = () => {
 <form>
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example1">Email address</label>
 <input type="email" id="form2Example1" className="form-control"
 placeholder='xyz@gmail.com'
  value={email}
  onChange={(e) => setemail(e.target.value)} 
 />
-<label className="form-label" for="form2Example1">Email address</label>
 </div>
 
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">First Name</label>
 <input type="text" id="form2Example2" className="form-control"
 placeholder='First Name'
  value={firstName}
  onChange={(e) => setfirstName(e.target.value)}  
 />
-<label className="form-label" for="form2Example2">First Name</label>
 </div>
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">Last Name</label>
 <input type="text" id="form2Example2" className="form-control" 
 placeholder='Last Name'
 value={lastName}
 onChange={(e) => setlastName(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">Last Name</label>
 </div>
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">Contact</label>
 <input type="text" id="form2Example2" className="form-control" 
 placeholder='Contact'
  value={contact}
  onChange={(e) => setcontact(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">Contact</label>
 </div>
 
 
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">City</label>
 <input type="text" id="form2Example2" className="form-control" 
 placeholder='City'
  value={city}
  onChange={(e) => setcity(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">City</label>
 </div>
 
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">Gender</label>
 <input type="Gender" id="form2Example2" className="form-control" 
 placeholder='Gender only (male, female, others)'
  value={gender}
  onChange={(e) => setgender(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">Gender</label>
 </div>
 
 
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">Password</label>
 <input type="password" id="form2Example2" className="form-control" 
 placeholder='*********'
  value={password}
  onChange={(e) => setpassword(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">Password</label>
 </div>
 
 

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import style from "./style.module.css"
+import { toast } from 'react-toastify'
 
 const page = () => {
 
@@ -12,37 +13,45 @@ const page = () => {
 
  const deleteeduHandler = ()=>{
        dispatch(asyncresumedeleteedustudent())
+       toast("Successfully Deleted")
     
  }
 
  const deletejobHandler = ()=>{
   dispatch(asyncresumedeletejobstudent())
+  toast("Successfully Deleted")
  }
 
 const deleteinternshipHandler = ()=>{
   dispatch(asyncresumedeleteinternshipstudent())
+  toast("Successfully Deleted")
 }
 
 
 const deleteresponsibilityHandler = ()=>{
   dispatch(asyncresumedeleteresponsibilitystudent())
+  toast("Successfully Deleted")
 }
 
 const deletecoursesHandler = ()=>{
   dispatch(asyncresumedeletecoursesstudent())
+  toast("Successfully Deleted")
 
 }
 const deleteskillHandler = ()=>{
  dispatch(asyncresumedeleteskillstudent())
+ toast("Successfully Deleted")
 }
 const deleteprojectHandler = ()=>{
   dispatch(asyncresumedeleteprojectstudent())
+  toast("Successfully Deleted")
 }
 
 
 
 const deleteaccomplishmentsHandler = ()=>{
   dispatch(asyncresumedeleteaccomplishmentstudent())
+  toast("Successfully Deleted")
 }
 
 
@@ -119,7 +128,8 @@ const deleteaccomplishmentsHandler = ()=>{
 
 <div className={style.catagory} key={e.id}>
 <p>{e.description}</p>
-<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/responsibility/${e.id}`}>edit </Link>|<Link style={{textDecoration : "none" ,fontSize : "15px"}} onClick={()=>deleteresponsibilityHandler(e.id)} href=""> delete</Link>
+<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/responsibility/${e.id}`}>edit </Link>|
+<Link style={{textDecoration : "none" ,fontSize : "15px"}} onClick={()=>deleteresponsibilityHandler(e.id)} href=""> delete</Link>
 </div>
 
 ))}
@@ -134,7 +144,8 @@ const deleteaccomplishmentsHandler = ()=>{
 <p className='mb-1'><span style={{fontSize :"18px"}}>{e.training}</span></p>
 <p className='mb-1'><span>{e.organization}</span> | <span>{e.duration}</span></p>
 <p className='mb-1'>{e.description}</p>
-<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/courses/${e.id}`}>edit </Link>|<Link style={{textDecoration : "none" ,fontSize : "15px"}} href=""> delete</Link>
+<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/courses/${e.id}`}>edit </Link>|
+<Link style={{textDecoration : "none" ,fontSize : "15px"}} href="" onClick={()=>deletecoursesHandler(e.id)}> delete</Link>
 </div>
 
 ))}
@@ -152,7 +163,8 @@ const deleteaccomplishmentsHandler = ()=>{
 <p className='mb-1'>{e.duration}</p>
 <p className='mb-1'>{e.description}</p>
 <p className='mb-1'><Link href={e.projectlink}>{e.projectlink}</Link></p>
-<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/projects/${e.id}`}>edit </Link>|<Link style={{textDecoration : "none" ,fontSize : "15px"}} href=""> delete</Link>
+<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/projects/${e.id}`}>edit </Link>|
+<Link style={{textDecoration : "none" ,fontSize : "15px"}} href=""  onClick={()=>deleteprojectHandler(e.id)} > delete</Link>
 </div>
   ))
 }
@@ -165,7 +177,8 @@ const deleteaccomplishmentsHandler = ()=>{
 <div className={style.catagory} key={e.id}>
 
 <p className='mb-1'><span>{e.skills}</span></p>
-<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/skills/${e.id}`}>edit </Link>|<Link style={{textDecoration : "none" ,fontSize : "15px"}} href=""> delete</Link>
+<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/skills/${e.id}`}>edit </Link>|
+<Link style={{textDecoration : "none" ,fontSize : "15px"}} href=""  onClick={()=>deleteskillHandler(e.id)}> delete</Link>
 </div>
 
 ))}
@@ -178,7 +191,7 @@ const deleteaccomplishmentsHandler = ()=>{
 <div key={e.id} className={style.catagory}>
 
 <p className='mb-1'>{e.descriptions}</p>
-<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/accomplishments/${e.id}`}>edit </Link>|<Link style={{textDecoration : "none" ,fontSize : "15px"}} href=""> delete</Link>
+<Link style={{textDecoration : "none" , fontSize : "15px"}} href={`/student/auth/resume/accomplishments/${e.id}`}>edit </Link>|<Link style={{textDecoration : "none" ,fontSize : "15px"}} href="" onClick={()=>deleteaccomplishmentsHandler(e.id)} > delete</Link>
 </div>
 
 ))}

@@ -1,14 +1,16 @@
 "use client"
 import { asyncresumeaddedustudent } from '@/store/actions/studentActions'
-import { useRouter } from 'next/navigation'
+import { useRouter  } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import style from "./style.module.css"
+import { toast } from 'react-toastify'
 
 const page = () => {
 
    const dispatch =  useDispatch()
     const router =  useRouter()
+ 
     const [collegeName, setcollegeName] = useState('')
     const [passingYear, setpassingYear] = useState('')
     const [course, setcourse] = useState('')
@@ -23,10 +25,15 @@ const page = () => {
         const  edu = {
           collegeName, passingYear , course , stream , cgpa , city
         }
-        dispatch(asyncresumeaddedustudent(edu));
-      
-         router.push("/student/auth/resume")
-       
+        try {
+          dispatch(asyncresumeaddedustudent(edu));
+          router.push("/student/auth/resume")
+        toast("Successfully Created")    
+        } catch (error) {
+          toast.error(error.message)
+        }
+        
+         
     }
 
     
@@ -37,7 +44,7 @@ const page = () => {
 <div className={style.container}>
 <h5 className={style.eduadd}>Add Education</h5> 
 <hr />
-<form>
+<form onSubmit={addHandler}>
 <div class="form-group mb-3">
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Collage Name"
     value={collegeName}
@@ -85,7 +92,7 @@ const page = () => {
     />
   
   </div>
-  <button class="btn btn-success" onClick={addHandler}>Submit</button>
+  <button class="btn btn-success" >Submit</button>
   </form> 
   <hr />
 

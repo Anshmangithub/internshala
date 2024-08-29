@@ -19,17 +19,16 @@ const page = () => {
      }
 
      const resetPasswordHandler = (e) =>{
-      
-  
       const pwd = {
         password
       }
-      dispatch(asyncresetpasswordstudent(pwd))
+      dispatch(asyncresetpasswordstudent(pwd));
     }
     
           const UpdateInfoHandler = () => {
             router.push("/student/auth/profile/update")
           }
+
   return (
     <div className=''>
       
@@ -43,7 +42,6 @@ const page = () => {
   <p className='mb-1'><span>Contact</span> : { student && student.contact}</p>
   <p className='mb-1'><span>Gender</span> : { student && student.gender}</p>
   <p className='mb-1'><span>City</span> : { student && student.city}</p>
-  <p className='mb-1'><span>password</span> : *******</p>
   <hr />
 <h4 className={style.profilename1} >Update The Details</h4>
  <p className='mb-1'>Reset Password</p>

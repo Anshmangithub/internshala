@@ -4,6 +4,7 @@ import style from "./style.module.css"
 import { asyncavatarstudent, asyncupdatestudent } from '@/store/actions/studentActions'
 import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/navigation'
+import { toast } from 'react-toastify'
 const page = () => {
     const dispatch =  useDispatch()
    const router =  useRouter()
@@ -26,8 +27,13 @@ const page = () => {
          email
          
         }
-   
-        dispatch(asyncupdatestudent(newStudent))
+       try {
+          dispatch(asyncupdatestudent(newStudent))
+          router.push("/student/auth/profile")
+         toast("Successfully Update")
+       } catch (error) {
+         toast(error)
+       }
        
      }
 
@@ -35,8 +41,16 @@ const page = () => {
         e.preventDefault()
         const formdata = new FormData(e.target);
         formdata.set("avatar" , e.target.avatar.files[0])
-        dispatch(asyncavatarstudent(formdata))
+       try {
+         
+         dispatch(asyncavatarstudent(formdata))
+         router.push("/student/auth/profile")
+         toast("Successfully Upload Image")
+       } catch (error) {
+        toast("Re-try"+ error.message)
+       }
       
+        
      }
 
   return (

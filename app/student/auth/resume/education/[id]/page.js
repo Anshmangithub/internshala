@@ -4,11 +4,13 @@ import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
  import style from "../style.module.css"
+import { toast } from 'react-toastify'
+
 const page = ({params}) => {
  const router =  useRouter()
     const dispatch =  useDispatch()
 
-    
+     
 
     const [collegeName, setcollegeName] = useState('')
     const [passingYear, setpassingYear] = useState('')
@@ -19,13 +21,19 @@ const page = ({params}) => {
     const {student} =  useSelector((state) => state.studentReducers)
     
   
+  
 
-     const editHandler  = ()=>{
+     const editHandler  = (e)=>{
         const edit = {
-            collegeName, passingYear , city , course , cgpa , stream
+             collegeName , passingYear , city , course , cgpa , stream 
         }
-        dispatch(asyncresumeeditedustudent(params.id , edit))
-        router.push("/student/auth/resume")
+        try {
+          dispatch(asyncresumeeditedustudent(params.id , edit ))
+          router.push("/student/auth/resume")
+          toast("Successfully Edited")
+        } catch (error) {
+          
+        }
      }
   return (
     <div>
@@ -33,7 +41,7 @@ const page = ({params}) => {
 <div className={style.container}>
 <h5 className={style.eduadd}>Edit Education</h5> 
 <hr />
-<form>
+<form onSubmit={editHandler}>
 <div class="form-group mb-3">
   <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Collage Name"
   name='collegeName'
@@ -83,7 +91,7 @@ const page = ({params}) => {
   />
 
 </div>
-<button class="btn btn-success" onClick={editHandler}>Submit</button>
+<button class="btn btn-success">Submit</button>
 </form> 
 <hr />
 

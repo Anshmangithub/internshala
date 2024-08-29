@@ -13,18 +13,25 @@ const page = () => {
     const dispatch =  useDispatch();
     
     const [email, setemail] = useState('')
-    const SentmailHandler = async ()=>{
+    const SentmailHandler = ()=>{
         const mail = {
     
             email 
         }
-        await dispatch(asyncsendmailstudent(mail));
-        if(errors.length === 2){
-         router.push("/student/forget/otp")      
-        }else{
-            toast.error(JSON.stringify(errors))
-            return
+        try {
+          dispatch(asyncsendmailstudent(mail));
+          if(errors.length === 2){
+            router.push("/student/forget/otp")
+           }
+          toast("Sent Email")      
+        } catch (error) {
+          toast.error(JSON.stringify(errors))
+          
         }
+      //  if(errors.length === 2){
+      //   }else{
+      //       return
+      //   }
     } 
     
 
@@ -34,7 +41,7 @@ const page = () => {
     <div className={style.profilemain}>
     <div className={style.container}>
       
-      <form action="">
+      <form action=""  onSubmit={SentmailHandler}>
 
 
         
@@ -46,7 +53,7 @@ onChange={(e) => setemail(e.target.value)}
 />
 
 </div>
-<button className='btn btn-primary' onClick={SentmailHandler}>Send</button>
+<button className='btn btn-primary mx-4' >Send</button>
       </form>
     </div>
     </div>

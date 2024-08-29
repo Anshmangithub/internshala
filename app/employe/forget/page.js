@@ -17,7 +17,12 @@ const page = () => {
     
             email
         }
-        await dispatch(asyncsendmailemploye(mail));
+        try {
+          await dispatch(asyncsendmailemploye(mail));
+          toast("Successfully Sent email")
+        } catch (error) {
+          toast(error)
+        }
         if(errors.length === 2){
          router.push("/employe/forget/otp")      
         }else{
@@ -33,7 +38,7 @@ const page = () => {
     <div className={style.profilemain}>
     <div className={style.container}>
       
-      <form action="">
+      <form onSubmit={SentmailHandler}>
 
 
         
@@ -45,7 +50,7 @@ onChange={(e) => setemail(e.target.value)}
 />
 
 </div>
-<button className='btn btn-primary' onClick={SentmailHandler}>Send</button>
+<button className='btn btn-primary' >Send</button>
       </form>
     </div>
     </div>

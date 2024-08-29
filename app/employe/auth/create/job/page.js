@@ -3,6 +3,7 @@ import { asynccreatejobemploye } from '@/store/actions/employeActions'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import style from "./style.module.css"
+import { toast } from 'react-toastify'
 const page = () => {
 
 
@@ -29,7 +30,13 @@ const page = () => {
          perks ,
         assesments 
     }
-     dispatch(asynccreatejobemploye(newJob))
+    try {
+      dispatch(asynccreatejobemploye(newJob))
+      toast("Successfully Created Jobs")
+    } catch (error) {
+      
+      toast.error(error.message)
+    }
   }
    return (
     <div className={style.main}>

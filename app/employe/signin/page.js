@@ -8,10 +8,12 @@ import Image from 'next/image'
 import style from "./style.module.css"
 import mainimg from "@/public/images/main.png"
 import loginintern from "@/public/images/loginintern.png"
+import { toast } from 'react-toastify'
 
 
 const page = () => {
 
+  
   const dispatch = useDispatch()
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
@@ -32,8 +34,12 @@ const page = () => {
       email ,
       password 
      }
-
-     dispatch(asyncsigninemploye(employe))
+  try {
+    dispatch(asyncsigninemploye(employe))
+    toast("Successfully login")  
+  } catch (error) {
+    toast.error(error.message)
+  }
   }
   
   return (
@@ -59,21 +65,25 @@ const page = () => {
            src={loginintern}       />
           <h4  className='welcomeh4'>Welcome to Internshala </h4>
           <h3 className='loginh3'>Login</h3> 
-          <form>
+          <form onSubmit={signinHandler}> 
      
       <div className="form-outline mb-1 mx-4">
+        <label className="form-label" for="form2Example1">Email address</label>
         <input type="email" id="form2Example1" className="form-control"
          value={email}
-         onChange={(e) => setemail(e.target.value)} />
-        <label className="form-label" for="form2Example1">Email address</label>
+         onChange={(e) => setemail(e.target.value)}
+         placeholder='xyz@email.com'
+         />
       </div>
     
     
       <div className="form-outline mb-1 mx-4">
+        <label className="form-label" for="form2Example2">Password</label>
         <input type="password" id="form2Example2" className="form-control" 
          value={password}
-         onChange={(e) => setpassword(e.target.value)} />
-        <label className="form-label" for="form2Example2">Password</label>
+         onChange={(e) => setpassword(e.target.value)}
+         placeholder='******'
+         />
       </div>
     
       <div className="row mb-3 mx-4">
@@ -91,7 +101,7 @@ const page = () => {
       </div>
     
     
-      <button type="submit" style={{marginLeft : '12vw'}} onClick={signinHandler} className="btn btn-primary btn-block mb-4">Sign in</button>
+      <button type="submit" style={{marginLeft : '12vw'}}  className="btn btn-primary btn-block mb-4">Sign in</button>
     
      
       <div className="text-center">

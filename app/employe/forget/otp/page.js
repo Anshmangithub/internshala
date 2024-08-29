@@ -21,6 +21,7 @@ const page = () => {
         password 
     }
    await dispatch(asyncotppasswordemploye(newPwd));
+   toast("Successfully Reset Password")
     if(errors.length === 2){
         router.push("/employe/signin/")
     }else{

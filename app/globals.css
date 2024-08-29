@@ -13,11 +13,12 @@
   }
   
   .imageinternlogo{
-    width: 14vw;
-    height: 6vw;
-    object-fit: cover;
-    margin-left: 2vw;
-    margin-top: -1vw;
+    width: 12rem;
+    height: 4.5rem;
+    margin-left: 2rem;
+    margin-top: -0.5rem;
+    
+    
     
   }
   
@@ -118,7 +119,7 @@
   .internshalah1{
     margin-left: 3vw;
     font-size: 80px;
-    color: rgba(25, 136, 241, 0.916);
+    color: rgba(88, 48, 3, 0.916);
     font-weight: 600;
     opacity: .9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

@@ -5,6 +5,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import style from "./style.module.css"
   import Link from 'next/link'
+import { toast } from 'react-toastify'
   const page = () => {
      const dispatch = useDispatch()
     const {student , jobs , internships} = useSelector((state) => state.studentReducers)
@@ -12,10 +13,12 @@ import style from "./style.module.css"
 
     const ApplyjobHandler  = (id)=>{
       dispatch(asyncapplyjobsstudent(id))
+      toast("Successfully Applied")
     }
 
     const ApplyinternshipsHandler  = (id)=>{
       dispatch(asyncapplyinternshipsstudent(id))
+      toast("Successfully Applied")
     }
 
 
@@ -86,7 +89,7 @@ import style from "./style.module.css"
   )
 }
 
-export default page
+export default page;
 
 
 

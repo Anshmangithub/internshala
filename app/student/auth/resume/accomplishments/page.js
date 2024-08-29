@@ -16,8 +16,8 @@ const page = () => {
           descriptions
         }
         dispatch(asyncresumeaddaccomplishmentstudent(accomplishment));
-      
-         router.push("/student/auth/resume")
+        router.push("/student/auth/resume")
+        toast("Successfully Created")
        
     }
 

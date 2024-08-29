@@ -16,6 +16,7 @@ const page = ({params}) => {
         }
         dispatch(asyncresumeeditskillstudent(params.id , course))
         router.push("/student/auth/resume")
+        toast("Successfully Edited")
      }
   return (
     <div>

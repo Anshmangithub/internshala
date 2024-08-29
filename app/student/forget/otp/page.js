@@ -20,7 +20,9 @@ const page = () => {
         otp ,
         password 
     }
+    
    await dispatch(asyncotppasswordstudent(newPwd));
+   toast("Successfully Reset Password")
     if(errors.length === 2){
         router.push("/student/signin/")
     }else{
@@ -34,7 +36,7 @@ const page = () => {
     <div className={style.profilemain}>
     <div className={style.container}>
       
-      <form action="">
+      <form action="" onSubmit={otpHandler}>
 
 
         
@@ -64,7 +66,7 @@ onChange={(e) => setpassword(e.target.value)}
 />
 
 </div>
-<button className='btn btn-primary' onClick={otpHandler}>submit</button>
+<button className='btn btn-primary mx-4' >submit</button>
       </form>
     </div>
     </div>

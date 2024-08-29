@@ -1,8 +1,8 @@
-"use client";
+"use client"
 import { store } from "@/store/store"
 import { Provider } from "react-redux"
 import { ToastContainer } from "react-toastify"
-
+import 'react-toastify/dist/ReactToastify.css';
 
 const Wrapper = ({children}) => {
   return (
@@ -10,7 +10,8 @@ const Wrapper = ({children}) => {
     <Provider store={store}> 
 
     {children}
-    <ToastContainer/>
+   <ToastContainer position="top-right" autoClose="2000" theme="dark"
+      />
     </Provider>
 
     </>

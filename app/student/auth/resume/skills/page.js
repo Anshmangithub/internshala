@@ -18,6 +18,7 @@ const page = () => {
         dispatch(asyncresumeaddskillstudent(skill));
       
          router.push("/student/auth/resume")
+         toast("Successfully Created")
        
     }
 

@@ -8,6 +8,7 @@ import style from "./style.module.css"
 
 import Image from 'next/image'
 import internshalalogo from "@/public/images/image-removebg.png"
+import talentForge from "../../public/talent-forge.png"
 
 
 const employelayout = ({ children}) => {
@@ -32,11 +33,13 @@ const employelayout = ({ children}) => {
    
    <div className={style.main}>
           <div className={style.navbar}>
+            <Link href="/"> 
            <Image
            className={style.imageinternlogo}
-           src={internshalalogo}
+           src={talentForge}
           />
     
+    </Link>
           <div className={style.navbartype}>
             <h3 className={style.h3tag}><Link style={{textDecoration : "none" , color : "GrayText"}} href={isAuthenticated ? "/employe/auth" : "/employe"}>Home</Link></h3>
             {isAuthenticated ? (<>

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Image from 'next/image'
 import style from "./style.module.css"
 import mainimg from "@/public/images/main.png"
+import { toast } from 'react-toastify'
 
 const page = () => {
   const dispatch = useDispatch()
@@ -40,8 +41,12 @@ const page = () => {
       email ,
       password 
      }
-
-     dispatch(asyncsignupemploye(newEmploye))
+    try {
+      dispatch(asyncsignupemploye(newEmploye))
+      toast("Successfully Signup")
+    } catch (error) {
+      toast(error)
+    }
   }
   
   return (
@@ -64,54 +69,54 @@ const page = () => {
 
 
 <h3 className={style.Signuph3}>Signup</h3> 
-<form>
+<form onSubmit={signupHandler}>
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example1">Email address</label>
 <input type="email" id="form2Example1" className="form-control"
 placeholder='xyz@gmail.com'
  value={email}
  onChange={(e) => setemail(e.target.value)} 
 />
-<label className="form-label" for="form2Example1">Email address</label>
 </div>
 
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">First Name</label>
 <input type="text" id="form2Example2" className="form-control"
 placeholder='First Name'
  value={firstName}
  onChange={(e) => setfirstName(e.target.value)}  
 />
-<label className="form-label" for="form2Example2">First Name</label>
 </div>
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">Last Name</label>
 <input type="text" id="form2Example2" className="form-control" 
 placeholder='Last Name'
 value={lastName}
 onChange={(e) => setlastName(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">Last Name</label>
 </div>
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">Contact</label>
 <input type="text" id="form2Example2" className="form-control" 
 placeholder='Contact'
  value={contact}
  onChange={(e) => setcontact(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">Contact</label>
 </div>
 
 
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">Organization Name</label>
 <input type="text" id="form2Example2" className="form-control" 
 placeholder='Oranization Name'
  value={organizationName}
  onChange={(e) => setorganizationName(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">Organization Name</label>
 </div>
 
 
@@ -119,17 +124,17 @@ placeholder='Oranization Name'
 
 
 <div className="form-outline mb-1 mx-4">
+<label className="form-label" for="form2Example2">Password</label>
 <input type="password" id="form2Example2" className="form-control" 
 placeholder='*********'
  value={password}
  onChange={(e) => setpassword(e.target.value)} 
 />
-<label className="form-label" for="form2Example2">Password</label>
 </div>
 
 
 
-<button type="submit" style={{marginLeft : '12vw'}} onClick={signupHandler} className="btn btn-primary btn-block mb-1">Sign up</button>
+<button type="submit" style={{marginLeft : '12vw'}}  className="btn btn-primary btn-block mb-1">Sign up</button>
  
 
 </form>

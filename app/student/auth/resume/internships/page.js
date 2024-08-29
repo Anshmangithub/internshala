@@ -26,7 +26,7 @@ const [description, setdescription] = useState('')
         dispatch(asyncresumeaddinternshipstudent(intern));
       
          router.push("/student/auth/resume")
-       
+         toast("Successfully Created")
     }
 
   return (

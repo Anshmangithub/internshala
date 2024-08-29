@@ -29,7 +29,7 @@ const page = () => {
         dispatch(asyncresumeaddcoursesstudent(intern));
       
          router.push("/student/auth/resume")
-       
+         toast("Successfully Created")
     }
 
   return (

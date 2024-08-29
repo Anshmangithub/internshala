@@ -23,6 +23,7 @@ const [description, setdescription] = useState('')
         }
         dispatch(asyncresumeeditinternshipstudent(params.id , intern))
         router.push("/student/auth/resume")
+        toast("Successfully Edited")
      }
   return (
     <div>

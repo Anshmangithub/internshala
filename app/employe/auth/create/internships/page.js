@@ -3,6 +3,7 @@ import { asynccreateinternshipemploye} from '@/store/actions/employeActions'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import style from "./style.module.css"
+import { toast } from 'react-toastify'
 
 const page = () => {
 
@@ -39,7 +40,13 @@ const page = () => {
   perks  ,
    assesments 
     }
-     dispatch(asynccreateinternshipemploye(newJob))
+    try {
+      dispatch(asynccreateinternshipemploye(newJob))
+      toast("Successfully Created Internships")
+    } catch (error) {
+      toast.error(error.message)
+      
+    }
   }
    return (
 
@@ -121,8 +128,9 @@ const page = () => {
     <div className="form-outline mb-2 mx-4">
       <label htmlFor="">Stipend</label>
     <input type="text" id="form2Example2" className="form-control" 
-    placeholder='Status'
+    placeholder='Status - Fixed, Negotiable, Performance-Based, unpaid'
     value={status}
+    
     onChange={(e) => setstatus(e.target.value)} 
     />
     </div>
