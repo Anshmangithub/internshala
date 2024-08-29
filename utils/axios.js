@@ -3,7 +3,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL : "http://localhost:8080/",
+    baseURL : "https://talent-forge-backend-sigma.vercel.app/",
     withCredentials : true
 })
 
